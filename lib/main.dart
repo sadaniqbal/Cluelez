@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
       'answers': [
         {
           'Text': 'Yes its so common, theres nothing to worry about!',
-          'Score': 4
+          'Score': 4,
         },
         {
           'Text':
@@ -250,7 +250,7 @@ class _MyAppState extends State<MyApp> {
         backgroundColor: (Colors.green),
         appBar: AppBar(
           backgroundColor: (Colors.lightGreen),
-          title: Center(child: Text("Cluelez")),
+          title: Center(child: Text("$_totalScore")),
         ),
         body: _questionIndex < _questions.length
             ? Quiz(
