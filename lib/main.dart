@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
     // },
     {
       'questionText':
-          'It is okay to know and ignore someone who is being cyber bullied online?',
+          'It is Okay to know and ignore someone who is being cyber bullied online?',
       'answers': [
         {
           'Text': 'Yes its so common, theres nothing to worry about!',
@@ -252,14 +252,16 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: (Colors.lightGreen),
           title: Center(child: Text("$_totalScore")),
         ),
-        body: _questionIndex < _questions.length
+        body:
+        _questionIndex < _questions.length
             ? Quiz(
                 answerQuestion: _answerQuestion,
                 questionIndex: _questionIndex,
                 questions: _questions,
               )
-            : Result(_totalScore, _resetQuiz),
+            : Result(_totalScore, _resetQuiz), 
       ),
+      
     );
   }
 }
