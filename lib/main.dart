@@ -17,38 +17,14 @@ class MyApp extends StatefulWidget {
   }
 }
 
+
+
 class _MyAppState extends State<MyApp> {
+
   final _questions = const [
-    // {
-    //   'questionText': 'What\'s your favourite color?',
-    //   'answers': [
-    //     {'Text': 'Black', 'Score': 8},
-    //     {'Text': 'Blue', 'Score': 4},
-    //     {'Text': 'Red', 'Score': 6},
-    //     {'Text': 'Green', 'Score': 2},
-    //   ],
-    // },
-    // {
-    //   'questionText': 'What\'s your favourite animal?',
-    //   'answers': [
-    //     {'Text': 'Pink Armadillo', 'Score': 4},
-    //     {'Text': 'Panda', 'Score': 2},
-    //     {'Text': 'Lion', 'Score': 8},
-    //     {'Text': 'Eagle', 'Score': 6},
-    //   ],
-    // },
-    // {
-    //   'questionText': 'Who\'s your favourite football player?',
-    //   'answers': [
-    //     {'Text': 'Messi', 'Score': 4},
-    //     {'Text': 'Salah', 'Score': 2},
-    //     {'Text': 'Ibrahimovic', 'Score': 8},
-    //     {'Text': 'Ronaldo', 'Score': 6},
-    //   ],
-    // },
     {
       'questionText':
-          'It is Okay to know and ignore someone who is being cyber bullied online?',
+          ('It is okay to know and ignore someone who is being cyber bullied online?'),
       'answers': [
         {
           'Text': 'Yes its so common, theres nothing to worry about!',
@@ -56,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         },
         {
           'Text':
-              'Yes because it does not involve you and it should stay that way',
+              'Yes, because it does not involve you and it should stay that way',
           'Score': 2
         },
         {
@@ -65,12 +41,14 @@ class _MyAppState extends State<MyApp> {
           'Score': 8
         },
         {'Text': 'No, The person should be helped right away!', 'Score': 6},
+        // {'Text': 'No, The person should be helped right away!', 'Score': 6},
+        // {'Text': Image(image: AssetImage('images/lvl1.png')), 'Score':0},
       ],
     },
     {
       'questionText': 'It is okay to show information about yourself online?',
       'answers': [
-        {'Text': 'Yes as long as it’s nothing important', 'Score': 6},
+        {'Text': 'Yes, as long as it’s nothing important', 'Score': 6},
         {
           'Text': 'No, you do not know who is looking at your information',
           'Score': 8
@@ -110,22 +88,22 @@ class _MyAppState extends State<MyApp> {
     },
     {
       'questionText':
-          'You accidently come across an online porn site; what do you do?',
+          'You accidently come across an online +18 site; what do you do?',
       'answers': [
         {'Text': 'Go tell a trusted adult.', 'Score': 8},
         {
           'Text': 'Do nothing; simply click out of it and leave it alone.',
           'Score': 6
         },
-        {'Text': 'Sit there and watch it.', 'Score': 2},
-        {'Text': 'Download it and watch it for later.', 'Score': 4},
+        {'Text': 'Sit there and keep browsing.', 'Score': 2},
+        {'Text': 'Save the page to browse later.', 'Score': 4},
       ],
     },
     {
       'questionText': 'What is sexting?',
       'answers': [
         {'Text': 'Sending sexy messages via text.', 'Score': 8},
-        {'Text': 'Sending a text to a gender.', 'Score': 2},
+        {'Text': 'Sending a text to someone from the opposite gender.', 'Score': 2},
         {
           'Text': 'Sending inappropriate messages/images via online/mobile',
           'Score': 6
@@ -138,7 +116,7 @@ class _MyAppState extends State<MyApp> {
       ],
     },
     {
-      'questionText': 'Should I sext?',
+      'questionText': 'Should one sext?',
       'answers': [
         {'Text': 'Yes', 'Score': 2},
         {'Text': 'Rarely', 'Score': 4},
@@ -178,11 +156,11 @@ class _MyAppState extends State<MyApp> {
     },
     {
       'questionText':
-          'You have received an email from your online service provider asking for your password to confirm your account otherwise it will be deleted. What should you do?',
+          'You have received an email from the deposed King of Nigeria asking for your banking details. What should you do?',
       'answers': [
-        {'Text': 'Reply to the email with your password', 'Score': 2},
+        {'Text': 'Help him ASAP by provide the asked details.', 'Score': 2},
         {
-          'Text': 'Check out the online site and see if its legitimate',
+          'Text': 'Search the deposed King on google.',
           'Score': 4
         },
         {'Text': 'Just delete it- It’s probably a scam', 'Score': 6},
@@ -202,6 +180,8 @@ class _MyAppState extends State<MyApp> {
   ];
   var _questionIndex = 0;
   var _totalScore = 0;
+  var _photos = Image.asset('images/3.jpg');
+
 
   void _resetQuiz() {
     setState(() {
@@ -224,44 +204,36 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  bgcolor() {
-    var colors = [
-      '#BADA55',
-      '#EE543A',
-      '#8870FF',
-      '#00B5B5',
-      '#EEE657',
-      '#2C82C9',
-      '#249991',
-      '#71BA51',
-      '#C82647',
-      '#CD6B97',
-    ];
-
-    for (var i = 0; i < colors.length; i++) {
-      return colors[i];
-    }
+  photos() {
+    Image.asset('images/$_questionIndex.jpg');
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark(),
       home: Scaffold(
-        backgroundColor: (Colors.green),
-        appBar: AppBar(
-          backgroundColor: (Colors.lightGreen),
-          title: Center(child: Text("$_totalScore")),
-        ),
+        backgroundColor: (Color(0xFF0000)),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(10.0), // here the desired height
+          child: AppBar(
+          backgroundColor: ((Color(0xFF0000))),
+          // title: Center(child: Text("$_questionIndex")),
+          // title: Image.asset('images/$_questionIndex.jpg', fit: BoxFit.fill, height: 60),
+        )),
         body:
-        _questionIndex < _questions.length
+        (_questionIndex < _questions.length
             ? Quiz(
                 answerQuestion: _answerQuestion,
                 questionIndex: _questionIndex,
                 questions: _questions,
               )
-            : Result(_totalScore, _resetQuiz), 
+            : Result(_totalScore, _resetQuiz)), 
       ),
       
     );
   }
+}
+
+class Asset {
 }
