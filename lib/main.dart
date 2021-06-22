@@ -100,28 +100,28 @@ class _MyAppState extends State<MyApp> {
       ],
     },
     {
-      'questionText': 'What is sexting?',
+      'questionText': 'All of the following are examples of privacy threats except:',
       'answers': [
-        {'Text': 'Sending sexy messages via text.', 'Score': 8},
-        {'Text': 'Sending a text to someone from the opposite gender.', 'Score': 2},
+        {'Text': 'Spam', 'Score': 8},
+        {'Text': 'Hackers', 'Score': 2},
         {
-          'Text': 'Sending inappropriate messages/images via online/mobile',
+          'Text': 'Worm',
           'Score': 6
         },
         {
           'Text':
-              'Taking inappropriate images of someone for your own exploitation.',
+              'Virus',
           'Score': 4
         },
       ],
     },
     {
-      'questionText': 'Should one sext?',
+      'questionText': 'A firewall may be implemented in:',
       'answers': [
-        {'Text': 'Yes', 'Score': 2},
-        {'Text': 'Rarely', 'Score': 4},
-        {'Text': 'Only with trusted person', 'Score': 6},
-        {'Text': 'No', 'Score': 8},
+        {'Text': 'Routers which connect intranet to internet', 'Score': 2},
+        {'Text': 'Bridges used in an intranet', 'Score': 4},
+        {'Text': 'Expensive modem', 'Score': 6},
+        {'Text': 'Application Programs', 'Score': 8},
       ],
     },
 
